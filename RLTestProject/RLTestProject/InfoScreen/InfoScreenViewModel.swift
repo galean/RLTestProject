@@ -13,8 +13,20 @@ class InfoScreenViewModel: NSObject {
     unowned var view: InfoScreenViewModelToViewProtocol
     
     fileprivate let candidateName = "Andrii Plotnikov"
-    fileprivate var currentDateTimeString = ""
-    fileprivate var currentFeedTitle = ""
+    fileprivate var currentDateTimeString = "" {
+        didSet {
+            DispatchQueue.main.async {
+                self.view.updateCurrentTime(with: self.currentDateTimeString)
+            }
+        }
+    }
+    fileprivate var currentFeedTitle = "" {
+        didSet {
+            DispatchQueue.main.async {
+                self.view.updateCurrentFeedTitle(with: self.currentFeedTitle)
+            }
+        }
+    }
     
     fileprivate  var timer: Timer?
     
@@ -22,6 +34,14 @@ class InfoScreenViewModel: NSObject {
         self.view = view
         
         super.init()
+        
+        configureNotification()
+    }
+    
+    fileprivate func configureNotification() {
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(handleCurrentFeedNotification(notification:)),
+                           name: Notification.Name("FeedDescriptionNotification"), object: nil)
     }
     
     //MARK:- Internal methods
@@ -39,10 +59,25 @@ class InfoScreenViewModel: NSObject {
         
         let date = Date()
         currentDateTimeString = dateFormatter.string(from: date)
+    }
+    
+    @objc fileprivate func handleCurrentFeedNotification(notification: Notification) {
+        let notificationData = notification.userInfo
         
-        DispatchQueue.main.async {
-            self.view.updateCurrentTime(with: self.currentDateTimeString)
+        guard let data = notificationData as? [String: String] else {
+            return
         }
+        
+        guard let title = data["FeedTitle"] else {
+            return
+        }
+        
+        currentFeedTitle = title
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("FeedDescriptionNotification"),
+                                                  object: nil)
     }
 }
 
@@ -51,8 +86,6 @@ extension InfoScreenViewModel: InfoScreenViewToViewModelProtocol {
     func fetchData() {
         self.updateCurrentDate()
         view.updateCandidateName(with: candidateName)
-        view.updateCurrentFeedTitle(with: currentFeedTitle)
-   
         createTimer()
     }
 }

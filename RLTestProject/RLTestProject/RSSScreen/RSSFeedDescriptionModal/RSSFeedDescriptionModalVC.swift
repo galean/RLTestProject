@@ -24,6 +24,7 @@ class RSSFeedDescriptionModalVC: UIViewController {
         super.viewDidLoad()
         
         showURLContent()
+        sendFeedDescriptionOpenedNotification()
     }
     
     fileprivate func showURLContent() {
@@ -31,6 +32,21 @@ class RSSFeedDescriptionModalVC: UIViewController {
             webView.load(URLRequest(url: link))
             webView.navigationDelegate = self
         }
+    }
+    
+    fileprivate func sendFeedDescriptionOpenedNotification() {
+        let feedTitle = feedDescriptionData?.title ?? ""
+        NotificationCenter.default.post(name: Notification.Name("FeedDescriptionNotification"),
+                                        object: nil, userInfo: ["FeedTitle": feedTitle])
+    }
+    
+    fileprivate func sendFeedDescriptionClosedNotification() {
+        NotificationCenter.default.post(name: Notification.Name("FeedDescriptionNotification"),
+                                        object: nil, userInfo: ["FeedTitle": ""])
+    }
+    
+    deinit {
+        sendFeedDescriptionClosedNotification()
     }
 }
 

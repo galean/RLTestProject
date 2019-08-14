@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Other-->
+        <!--RSS-->
         <scene sceneID="RKF-DU-79Z">
             <objects>
                 <navigationController id="Wru-Zf-gtI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Other" id="57m-xi-hEb">
+                    <tabBarItem key="tabBarItem" title="RSS" id="57m-xi-hEb">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bPp-Hb-7JH">
@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="4084" y="508"/>
         </scene>
-        <!--News-->
+        <!--Info-->
         <scene sceneID="Q9h-Bx-uqg">
             <objects>
                 <viewController id="cab-aJ-cSq" customClass="InfoScreenVC" customModule="RLTestProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -179,21 +179,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDE-H8-71L">
-                                <rect key="frame" x="207" y="408.5" width="0.0" height="40"/>
+                                <rect key="frame" x="195" y="408.5" width="24" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="if6-Zd-ZBh">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHg-B7-V4a">
-                                        <rect key="frame" x="0.0" y="20" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="20" width="24" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-I4-wiZ">
-                                        <rect key="frame" x="0.0" y="40" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-I4-wiZ">
+                                        <rect key="frame" x="12" y="40" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -204,11 +205,11 @@
                                     <constraint firstAttribute="trailing" secondItem="if6-Zd-ZBh" secondAttribute="trailing" id="1Xe-r1-sgq"/>
                                     <constraint firstItem="PHg-B7-V4a" firstAttribute="leading" secondItem="CDE-H8-71L" secondAttribute="leading" id="1wo-s2-OQY"/>
                                     <constraint firstAttribute="trailing" secondItem="PHg-B7-V4a" secondAttribute="trailing" id="6Ou-WY-o0H"/>
-                                    <constraint firstItem="wR2-I4-wiZ" firstAttribute="leading" secondItem="CDE-H8-71L" secondAttribute="leading" id="6ls-Nd-Fax"/>
+                                    <constraint firstItem="wR2-I4-wiZ" firstAttribute="leading" secondItem="CDE-H8-71L" secondAttribute="leading" constant="12" id="6ls-Nd-Fax"/>
                                     <constraint firstItem="wR2-I4-wiZ" firstAttribute="top" secondItem="PHg-B7-V4a" secondAttribute="bottom" constant="20" id="9tI-dT-GEn"/>
                                     <constraint firstAttribute="bottom" secondItem="wR2-I4-wiZ" secondAttribute="bottom" id="MV1-pj-IsF"/>
                                     <constraint firstItem="if6-Zd-ZBh" firstAttribute="top" secondItem="CDE-H8-71L" secondAttribute="top" id="cCd-d1-Etz"/>
-                                    <constraint firstAttribute="trailing" secondItem="wR2-I4-wiZ" secondAttribute="trailing" id="nfR-3h-O6t"/>
+                                    <constraint firstAttribute="trailing" secondItem="wR2-I4-wiZ" secondAttribute="trailing" constant="12" id="nfR-3h-O6t"/>
                                     <constraint firstItem="PHg-B7-V4a" firstAttribute="top" secondItem="if6-Zd-ZBh" secondAttribute="bottom" constant="20" id="ooe-r3-dGN"/>
                                     <constraint firstItem="if6-Zd-ZBh" firstAttribute="leading" secondItem="CDE-H8-71L" secondAttribute="leading" id="uy1-EN-cOT"/>
                                 </constraints>
@@ -217,11 +218,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CDE-H8-71L" firstAttribute="centerY" secondItem="MFf-mg-eac" secondAttribute="centerY" id="6lX-w9-KW1"/>
+                            <constraint firstItem="MFf-mg-eac" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CDE-H8-71L" secondAttribute="trailing" id="IVv-v2-S97"/>
                             <constraint firstItem="CDE-H8-71L" firstAttribute="centerX" secondItem="MFf-mg-eac" secondAttribute="centerX" id="Lr4-VP-ZfJ"/>
+                            <constraint firstItem="CDE-H8-71L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MFf-mg-eac" secondAttribute="leading" id="OJM-Tw-VQF"/>
+                            <constraint firstItem="CDE-H8-71L" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MFf-mg-eac" secondAttribute="top" id="QCg-Jo-5Xh"/>
+                            <constraint firstItem="MFf-mg-eac" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CDE-H8-71L" secondAttribute="bottom" id="jpG-rD-SO8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MFf-mg-eac"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" id="wFe-77-Yb7">
+                    <tabBarItem key="tabBarItem" title="Info" id="wFe-77-Yb7">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                     <connections>

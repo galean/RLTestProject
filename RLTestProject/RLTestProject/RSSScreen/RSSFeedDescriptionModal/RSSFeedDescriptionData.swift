@@ -9,5 +9,6 @@
 import Foundation
 
 struct RSSFeedDescriptionData {
+    let title: String
     let linkURL: URL
 }
