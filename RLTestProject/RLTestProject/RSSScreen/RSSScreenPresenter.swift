@@ -47,6 +47,10 @@ extension RSSScreenPresenter: RSSScreenVCToPresenterProtocol {
     func feedTableViewFeedData(forCellAt indexPath: IndexPath) -> FeedData {
         return interactor.feedData(for: indexPath)
     }
+    
+    func handleFeedDescription(withDescriptionData data: RSSFeedDescriptionData) {
+        viewController.segueFeedDescription(withFeedDescriptionData: data)
+    }
 }
 
 //MARK:- RSSScreenInteractorToPresenterProtocol

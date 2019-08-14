@@ -10,16 +10,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Other-->
+        <scene sceneID="RKF-DU-79Z">
+            <objects>
+                <navigationController id="Wru-Zf-gtI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Other" id="57m-xi-hEb">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bPp-Hb-7JH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gvo-dn-ARO" kind="relationship" relationship="rootViewController" id="aYr-q1-RRk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEA-ar-FKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="508"/>
+        </scene>
         <!--RSS-->
         <scene sceneID="zai-kX-nV4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BgA-7C-XSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gvo-dn-ARO" customClass="RSSScreenVC" customModule="RLTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZL-7Y-9ff">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wS7-QD-dGe">
-                                <rect key="frame" x="12" y="64" width="390" height="29"/>
+                                <rect key="frame" x="12" y="108" width="390" height="29"/>
                                 <segments>
                                     <segment title="News"/>
                                     <segment title="Other"/>
@@ -29,7 +49,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-2M-PHd">
-                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
+                                <rect key="frame" x="0.0" y="156" width="414" height="657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RSSScreenTableViewCell" id="SLm-0a-zSK" customClass="RSSScreenTableViewCell" customModule="RLTestProject" customModuleProvider="target">
@@ -99,14 +119,56 @@
                     <tabBarItem key="tabBarItem" title="RSS" id="xBx-sS-Ljj">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="Zcg-lz-RhB"/>
                     <connections>
                         <outlet property="tableView" destination="tLg-2M-PHd" id="OJc-zL-nlb"/>
                         <outlet property="tapBar" destination="wS7-QD-dGe" id="nRw-LV-MS9"/>
+                        <segue destination="eJP-t8-DUi" kind="show" identifier="FeedDescriptionSegue" id="OAT-bN-PRI"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BgA-7C-XSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="452.67857142857139"/>
+            <point key="canvasLocation" x="3025" y="508"/>
+        </scene>
+        <!--Feed Description ModalVC-->
+        <scene sceneID="ger-IM-IB0">
+            <objects>
+                <viewController id="eJP-t8-DUi" customClass="RSSFeedDescriptionModalVC" customModule="RLTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YP1-T3-YO8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eu8-TS-a7I">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Owx-zK-kzn">
+                                <rect key="frame" x="190" y="431" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Owx-zK-kzn" firstAttribute="centerX" secondItem="eu8-TS-a7I" secondAttribute="centerX" id="2RP-UL-yMk"/>
+                            <constraint firstItem="Owx-zK-kzn" firstAttribute="centerY" secondItem="eu8-TS-a7I" secondAttribute="centerY" id="iHe-P8-Vl1"/>
+                            <constraint firstItem="Kej-T3-V8d" firstAttribute="trailing" secondItem="eu8-TS-a7I" secondAttribute="trailing" id="iLs-Hc-GCp"/>
+                            <constraint firstItem="eu8-TS-a7I" firstAttribute="leading" secondItem="Kej-T3-V8d" secondAttribute="leading" id="iSQ-xg-FVb"/>
+                            <constraint firstItem="Kej-T3-V8d" firstAttribute="bottom" secondItem="eu8-TS-a7I" secondAttribute="bottom" id="zES-Zl-ryC"/>
+                            <constraint firstItem="eu8-TS-a7I" firstAttribute="top" secondItem="Kej-T3-V8d" secondAttribute="top" id="zXZ-X7-mJW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kej-T3-V8d"/>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="Owx-zK-kzn" id="y6C-4c-15P"/>
+                        <outlet property="webView" destination="eu8-TS-a7I" id="AUC-MJ-stS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnO-PP-pxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4084" y="508"/>
         </scene>
         <!--News-->
         <scene sceneID="Q9h-Bx-uqg">
@@ -170,12 +232,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5h-Bo-I2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="-194"/>
+            <point key="canvasLocation" x="1958" y="-236"/>
         </scene>
-        <!--Main Tap Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Wck-Co-6nd">
             <objects>
-                <tabBarController id="5Fv-71-PkD" customClass="MainTapBarController" customModule="RLTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="5Fv-71-PkD" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bIR-dZ-TxQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -183,7 +245,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="cab-aJ-cSq" kind="relationship" relationship="viewControllers" id="caW-16-usX"/>
-                        <segue destination="gvo-dn-ARO" kind="relationship" relationship="viewControllers" id="PUO-od-geT"/>
+                        <segue destination="Wru-Zf-gtI" kind="relationship" relationship="viewControllers" id="iCW-d4-zp1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eus-f6-SRW" userLabel="First Responder" sceneMemberID="firstResponder"/>

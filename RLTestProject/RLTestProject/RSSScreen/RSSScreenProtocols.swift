@@ -32,9 +32,11 @@ protocol RSSScreenPresenterToInteractorProtocol: NSObject {
 
 protocol RSSScreenInteractorToPresenterProtocol: NSObject {
     func requestFeedUpdate()
+    func handleFeedDescription(withDescriptionData data: RSSFeedDescriptionData)
 }
 
 protocol RSSScreenPresenterToVCProtocol: NSObject {
     func reloadFeedTableView()
+    func segueFeedDescription(withFeedDescriptionData data: RSSFeedDescriptionData)
 }
 

@@ -1,5 +1,5 @@
 //
-//  MainTapBarController.swift
+//  RSSFeedDescriptionData.swift
 //  RLTestProject
 //
 //  Created by Galean Pallerman on 14.08.2019.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import UIKit
 
-class MainTapBarController: UITabBarController {
-    
+struct RSSFeedDescriptionData {
+    let linkURL: URL
 }

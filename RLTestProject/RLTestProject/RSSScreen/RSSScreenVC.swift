@@ -9,14 +9,19 @@
 import Foundation
 import UIKit
 
+
 class RSSScreenVC: UIViewController {
     //MARK: Initialization
+    let feedSegueId = "FeedDescriptionSegue"
+
     lazy var presenter: RSSScreenVCToPresenterProtocol = {
         return RSSScreenPresenter(with: self)
     }()
     
     @IBOutlet weak var tapBar: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    var feedDescriptionData: RSSFeedDescriptionData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +45,29 @@ class RSSScreenVC: UIViewController {
         
         presenter.chosenSegment(at: index)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == feedSegueId {
+            guard let descData = feedDescriptionData else {
+                return
+            }
+            
+            guard let feedDescriptionVC = segue.destination as? RSSFeedDescriptionModalVC else {
+                return
+            }
+            
+            feedDescriptionVC.feedDescriptionData = descData
+        }
+    }
 }
 
 //MARK:- RSSScreenPresenterToVCProtocol
 extension RSSScreenVC: RSSScreenPresenterToVCProtocol {
+    func segueFeedDescription(withFeedDescriptionData data: RSSFeedDescriptionData) {
+        feedDescriptionData = data
+        self.performSegue(withIdentifier: feedSegueId, sender: self)
+    }
+    
     func reloadFeedTableView() {
         tableView.reloadData()
     }

@@ -102,7 +102,16 @@ extension RSSScreenInteractor: RSSScreenPresenterToInteractorProtocol {
     }
     
     func handleSelectedFeed(at index: Int) {
+        let feed = currentFeedModel.feedData[index]
+        let linkURLOpt = URL(string: feed.link)
         
+        guard let linkURL = linkURLOpt else {
+            print("Description link is not correct!")
+            return
+        }
+        let feedDescriptionData = RSSFeedDescriptionData(linkURL: linkURL)
+
+        presenter.handleFeedDescription(withDescriptionData: feedDescriptionData)
     }
 }
 

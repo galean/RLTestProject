@@ -49,8 +49,10 @@ class InfoScreenViewModel: NSObject {
 //MARK:- InfoScreenViewToViewModelProtocol
 extension InfoScreenViewModel: InfoScreenViewToViewModelProtocol {
     func fetchData() {
-        createTimer()
+        self.updateCurrentDate()
         view.updateCandidateName(with: candidateName)
         view.updateCurrentFeedTitle(with: currentFeedTitle)
+   
+        createTimer()
     }
 }
