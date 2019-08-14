@@ -3,25 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28FF4EF69942C58BF7F294E7 /* Pods_RLTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1E2675140606FF560ACABD /* Pods_RLTestProject.framework */; };
 		BB380E322304560E0042CB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E312304560E0042CB1E /* AppDelegate.swift */; };
-		BB380E342304560E0042CB1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E332304560E0042CB1E /* ViewController.swift */; };
 		BB380E372304560E0042CB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB380E352304560E0042CB1E /* Main.storyboard */; };
 		BB380E392304560F0042CB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB380E382304560F0042CB1E /* Assets.xcassets */; };
 		BB380E3C2304560F0042CB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB380E3A2304560F0042CB1E /* LaunchScreen.storyboard */; };
+		BB380E5823045BC30042CB1E /* InfoScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5523045BC30042CB1E /* InfoScreenVC.swift */; };
+		BB380E5923045BC30042CB1E /* InfoScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5623045BC30042CB1E /* InfoScreenProtocols.swift */; };
+		BB380E5A23045BC30042CB1E /* InfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5723045BC30042CB1E /* InfoScreenViewModel.swift */; };
+		BB380E6023045BE40042CB1E /* RSSScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5B23045BE40042CB1E /* RSSScreenPresenter.swift */; };
+		BB380E6123045BE40042CB1E /* RSSScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5C23045BE40042CB1E /* RSSScreenVC.swift */; };
+		BB380E6223045BE40042CB1E /* RSSScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5D23045BE40042CB1E /* RSSScreenInteractor.swift */; };
+		BB380E6323045BE40042CB1E /* RSSScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E5E23045BE40042CB1E /* RSSScreenProtocols.swift */; };
+		BB380E66230468400042CB1E /* MainTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB380E65230468400042CB1E /* MainTapBarController.swift */; };
+		BB53443E23048561004C1B71 /* RSSOtherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53443C23048561004C1B71 /* RSSOtherModel.swift */; };
+		BB53444223048591004C1B71 /* RSSFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53444123048591004C1B71 /* RSSFeedModel.swift */; };
+		BB534446230485C0004C1B71 /* RSSNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB534445230485C0004C1B71 /* RSSNewsModel.swift */; };
+		BB53444823049436004C1B71 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53444723049436004C1B71 /* FeedData.swift */; };
+		BB53444C230496FC004C1B71 /* RSSScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53444B230496FB004C1B71 /* RSSScreenTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C1E2675140606FF560ACABD /* Pods_RLTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RLTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1536B4007385A8B0C4DAFC /* Pods-RLTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RLTestProject.release.xcconfig"; path = "Target Support Files/Pods-RLTestProject/Pods-RLTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		BB380E2E2304560E0042CB1E /* RLTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RLTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB380E312304560E0042CB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB380E332304560E0042CB1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB380E362304560E0042CB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB380E382304560F0042CB1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB380E3B2304560F0042CB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB380E3D2304560F0042CB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB380E5523045BC30042CB1E /* InfoScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoScreenVC.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/InfoScreen/InfoScreenVC.swift; sourceTree = "<group>"; };
+		BB380E5623045BC30042CB1E /* InfoScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoScreenProtocols.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/InfoScreen/InfoScreenProtocols.swift; sourceTree = "<group>"; };
+		BB380E5723045BC30042CB1E /* InfoScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoScreenViewModel.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/InfoScreen/InfoScreenViewModel.swift; sourceTree = "<group>"; };
+		BB380E5B23045BE40042CB1E /* RSSScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSSScreenPresenter.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/RSSScreenPresenter.swift; sourceTree = "<group>"; };
+		BB380E5C23045BE40042CB1E /* RSSScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSSScreenVC.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/RSSScreenVC.swift; sourceTree = "<group>"; };
+		BB380E5D23045BE40042CB1E /* RSSScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSSScreenInteractor.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/RSSScreenInteractor.swift; sourceTree = "<group>"; };
+		BB380E5E23045BE40042CB1E /* RSSScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSSScreenProtocols.swift; path = ../../../../../../../../../../../Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/RSSScreenProtocols.swift; sourceTree = "<group>"; };
+		BB380E65230468400042CB1E /* MainTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapBarController.swift; sourceTree = "<group>"; };
+		BB53443C23048561004C1B71 /* RSSOtherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSOtherModel.swift; sourceTree = "<group>"; };
+		BB53444123048591004C1B71 /* RSSFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedModel.swift; sourceTree = "<group>"; };
+		BB534445230485C0004C1B71 /* RSSNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSNewsModel.swift; sourceTree = "<group>"; };
+		BB53444723049436004C1B71 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedData.swift; path = ../../../../../../../../../System/Volumes/Data/Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/FeedData.swift; sourceTree = "<group>"; };
+		BB53444B230496FB004C1B71 /* RSSScreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSScreenTableViewCell.swift; sourceTree = "<group>"; };
+		D654BC7939018E127290E14D /* Pods-RLTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RLTestProject.debug.xcconfig"; path = "Target Support Files/Pods-RLTestProject/Pods-RLTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FF4EF69942C58BF7F294E7 /* Pods_RLTestProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31F21B0CCE5C8BB86966C479 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C1E2675140606FF560ACABD /* Pods_RLTestProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		550F77C105F35F8E6450C165 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D654BC7939018E127290E14D /* Pods-RLTestProject.debug.xcconfig */,
+				AB1536B4007385A8B0C4DAFC /* Pods-RLTestProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BB380E252304560E0042CB1E = {
 			isa = PBXGroup;
 			children = (
 				BB380E302304560E0042CB1E /* RLTestProject */,
 				BB380E2F2304560E0042CB1E /* Products */,
+				550F77C105F35F8E6450C165 /* Pods */,
+				31F21B0CCE5C8BB86966C479 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +103,49 @@
 			isa = PBXGroup;
 			children = (
 				BB380E312304560E0042CB1E /* AppDelegate.swift */,
-				BB380E332304560E0042CB1E /* ViewController.swift */,
+				BB380E65230468400042CB1E /* MainTapBarController.swift */,
+				BB380E43230457320042CB1E /* InfoScreen */,
+				BB380E44230457540042CB1E /* RSSScreen */,
 				BB380E352304560E0042CB1E /* Main.storyboard */,
 				BB380E382304560F0042CB1E /* Assets.xcassets */,
 				BB380E3A2304560F0042CB1E /* LaunchScreen.storyboard */,
 				BB380E3D2304560F0042CB1E /* Info.plist */,
 			);
 			path = RLTestProject;
+			sourceTree = "<group>";
+		};
+		BB380E43230457320042CB1E /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BB380E5623045BC30042CB1E /* InfoScreenProtocols.swift */,
+				BB380E5723045BC30042CB1E /* InfoScreenViewModel.swift */,
+				BB380E5523045BC30042CB1E /* InfoScreenVC.swift */,
+			);
+			path = InfoScreen;
+			sourceTree = "<group>";
+		};
+		BB380E44230457540042CB1E /* RSSScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BB380E5E23045BE40042CB1E /* RSSScreenProtocols.swift */,
+				BB53443823048538004C1B71 /* RSSModel */,
+				BB380E5D23045BE40042CB1E /* RSSScreenInteractor.swift */,
+				BB380E5B23045BE40042CB1E /* RSSScreenPresenter.swift */,
+				BB380E5C23045BE40042CB1E /* RSSScreenVC.swift */,
+				BB53444B230496FB004C1B71 /* RSSScreenTableViewCell.swift */,
+			);
+			path = RSSScreen;
+			sourceTree = "<group>";
+		};
+		BB53443823048538004C1B71 /* RSSModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB53444723049436004C1B71 /* FeedData.swift */,
+				BB534445230485C0004C1B71 /* RSSNewsModel.swift */,
+				BB53443C23048561004C1B71 /* RSSOtherModel.swift */,
+				BB53444123048591004C1B71 /* RSSFeedModel.swift */,
+			);
+			path = RSSModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB380E402304560F0042CB1E /* Build configuration list for PBXNativeTarget "RLTestProject" */;
 			buildPhases = (
+				98859376F414965C51467EFC /* [CP] Check Pods Manifest.lock */,
 				BB380E2A2304560E0042CB1E /* Sources */,
 				BB380E2B2304560E0042CB1E /* Frameworks */,
 				BB380E2C2304560E0042CB1E /* Resources */,
+				1BC1D18CEEFB3D4AD3535C8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +216,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BC1D18CEEFB3D4AD3535C8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RLTestProject/Pods-RLTestProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RLTestProject/Pods-RLTestProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RLTestProject/Pods-RLTestProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98859376F414965C51467EFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RLTestProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB380E2A2304560E0042CB1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB380E342304560E0042CB1E /* ViewController.swift in Sources */,
+				BB53444823049436004C1B71 /* FeedData.swift in Sources */,
+				BB380E5923045BC30042CB1E /* InfoScreenProtocols.swift in Sources */,
+				BB380E5823045BC30042CB1E /* InfoScreenVC.swift in Sources */,
+				BB380E6323045BE40042CB1E /* RSSScreenProtocols.swift in Sources */,
+				BB53444C230496FC004C1B71 /* RSSScreenTableViewCell.swift in Sources */,
+				BB380E66230468400042CB1E /* MainTapBarController.swift in Sources */,
+				BB53443E23048561004C1B71 /* RSSOtherModel.swift in Sources */,
+				BB380E6123045BE40042CB1E /* RSSScreenVC.swift in Sources */,
+				BB53444223048591004C1B71 /* RSSFeedModel.swift in Sources */,
 				BB380E322304560E0042CB1E /* AppDelegate.swift in Sources */,
+				BB380E5A23045BC30042CB1E /* InfoScreenViewModel.swift in Sources */,
+				BB534446230485C0004C1B71 /* RSSNewsModel.swift in Sources */,
+				BB380E6023045BE40042CB1E /* RSSScreenPresenter.swift in Sources */,
+				BB380E6223045BE40042CB1E /* RSSScreenInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +420,7 @@
 		};
 		BB380E412304560F0042CB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D654BC7939018E127290E14D /* Pods-RLTestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +439,7 @@
 		};
 		BB380E422304560F0042CB1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB1536B4007385A8B0C4DAFC /* Pods-RLTestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
