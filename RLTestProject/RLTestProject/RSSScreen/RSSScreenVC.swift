@@ -21,6 +21,9 @@ class RSSScreenVC: UIViewController {
     @IBOutlet weak var tapBar: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var activityLeadingConstraint: NSLayoutConstraint!
+    
     var feedDescriptionData: RSSFeedDescriptionData?
     
     override func viewDidLoad() {
@@ -64,17 +67,36 @@ class RSSScreenVC: UIViewController {
             feedDescriptionVC.feedDescriptionData = descData
         }
     }
+    
+    //MARK:- Internal Methods
+    func animateActivity(_ shouldAnimate: Bool) {
+        shouldAnimate ? activity.startAnimating() : activity.stopAnimating()
+    }
+    
+    func layoutActivity(to tabBarIndex: Int) {
+        let space: CGFloat = 8
+        let activityShift = CGFloat(tabBarIndex+1) * tapBar.frame.size.width/2
+        let activityXOffset = activityShift - activity.frame.size.width - space
+        
+        activityLeadingConstraint.constant = activityXOffset
+        activity.layoutIfNeeded()
+    }
 }
 
 //MARK:- RSSScreenPresenterToVCProtocol
 extension RSSScreenVC: RSSScreenPresenterToVCProtocol {
     func segueFeedDescription(withFeedDescriptionData data: RSSFeedDescriptionData) {
         feedDescriptionData = data
-        self.performSegue(withIdentifier: feedSegueId, sender: self)
+        performSegue(withIdentifier: feedSegueId, sender: self)
     }
     
     func reloadFeedTableView() {
         tableView.reloadData()
+    }
+    
+    func animateFeedUpdating(_ isUpdating: Bool, feedIndex: Int) {
+        layoutActivity(to: feedIndex)
+        animateActivity(isUpdating)
     }
 }
 

@@ -103,10 +103,15 @@
                                     <outlet property="delegate" destination="gvo-dn-ARO" id="jDr-IC-Ryt"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="7QO-O8-BQo">
+                                <rect key="frame" x="172" y="112" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7QO-O8-BQo" firstAttribute="centerY" secondItem="wS7-QD-dGe" secondAttribute="centerY" id="6bk-mW-NDb"/>
                             <constraint firstItem="tLg-2M-PHd" firstAttribute="top" secondItem="wS7-QD-dGe" secondAttribute="bottom" constant="1" id="E8H-45-7RL"/>
+                            <constraint firstItem="7QO-O8-BQo" firstAttribute="leading" secondItem="wS7-QD-dGe" secondAttribute="leading" constant="160" id="QIM-HU-WRz"/>
                             <constraint firstItem="tLg-2M-PHd" firstAttribute="leading" secondItem="dwk-oW-Fwq" secondAttribute="leading" id="R1l-TT-et0"/>
                             <constraint firstItem="dwk-oW-Fwq" firstAttribute="trailing" secondItem="tLg-2M-PHd" secondAttribute="trailing" id="Y1L-2j-dKj"/>
                             <constraint firstItem="wS7-QD-dGe" firstAttribute="leading" secondItem="dwk-oW-Fwq" secondAttribute="leading" constant="12" id="ax3-73-jhZ"/>
@@ -121,6 +126,8 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="Zcg-lz-RhB"/>
                     <connections>
+                        <outlet property="activity" destination="7QO-O8-BQo" id="2k4-P0-zFa"/>
+                        <outlet property="activityLeadingConstraint" destination="QIM-HU-WRz" id="VPf-pz-4QL"/>
                         <outlet property="tableView" destination="tLg-2M-PHd" id="OJc-zL-nlb"/>
                         <outlet property="tapBar" destination="wS7-QD-dGe" id="nRw-LV-MS9"/>
                         <segue destination="eJP-t8-DUi" kind="show" identifier="FeedDescriptionSegue" id="OAT-bN-PRI"/>

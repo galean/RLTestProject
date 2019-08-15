@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CurrentFeedType {
+enum CurrentFeedType: Int {
     case News
     case Other
 }
@@ -58,6 +58,7 @@ class RSSScreenInteractor: NSObject {
     
     @objc fileprivate func updateCurrentFeed() {
         currentFeedModel.updateFeed()
+        presenter.handleFeedUpdating(true, feedType: currentFeedType)
     }
 }
 
@@ -75,13 +76,12 @@ extension RSSScreenInteractor: RSSScreenPresenterToInteractorProtocol {
     }
     
     func handleSegmentUpdate(at index: Int) {
-        if index == 0 {
-            currentFeedType = .News
-        } else if index == 1 {
-            currentFeedType = .Other
-        } else {
-            print("This cause is unhandled!")
+        guard let feedType = CurrentFeedType(rawValue: index) else {
+            print("This feed type is unhandled!")
+            return
         }
+        
+        currentFeedType = feedType
     }
     
     func feedNumberOfRows(inSection section: Int) -> Int {
@@ -119,5 +119,6 @@ extension RSSScreenInteractor: RSSScreenPresenterToInteractorProtocol {
 extension RSSScreenInteractor: RSSFeedModelDelegate {
     func feedUpdated() {
         presenter.requestFeedUpdate()
+        presenter.handleFeedUpdating(currentFeedModel.isUpdating, feedType: currentFeedType)
     }
 }

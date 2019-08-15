@@ -55,6 +55,12 @@ extension RSSScreenPresenter: RSSScreenVCToPresenterProtocol {
 
 //MARK:- RSSScreenInteractorToPresenterProtocol
 extension RSSScreenPresenter: RSSScreenInteractorToPresenterProtocol {
+    func handleFeedUpdating(_ isUpdating: Bool, feedType: CurrentFeedType) {
+        DispatchQueue.main.async {
+            self.viewController.animateFeedUpdating(isUpdating, feedIndex: feedType.rawValue)
+        }
+    }
+    
     func requestFeedUpdate() {
         viewController.reloadFeedTableView()
     }
