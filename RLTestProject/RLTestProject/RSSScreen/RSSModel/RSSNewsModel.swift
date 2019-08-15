@@ -15,8 +15,7 @@ class RSSNewsModel: NSObject {
 
     override init() {
         let newsUrlStr = "http://feeds.reuters.com/reuters/businessNews"
-        let newsUrl = URL(string: newsUrlStr)!
-        newsModel = RSSFeedModel(with: newsUrl)
+        newsModel = RSSFeedModel(with: newsUrlStr)
         
         super.init()
         

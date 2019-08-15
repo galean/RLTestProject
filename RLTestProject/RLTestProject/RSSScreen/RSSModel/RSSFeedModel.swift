@@ -24,12 +24,12 @@ class RSSFeedModel: NSObject {
     var isUpdating: Bool = false
     var feedData: [FeedData] = []
 
-    fileprivate var feedUrl: URL
+    fileprivate var feedUrlString: String
     
     weak var delegate: RSSFeedModelDelegate?
     
-    init(with feedUrl: URL) {
-        self.feedUrl = feedUrl
+    init(with feedUrlString: String) {
+        self.feedUrlString = feedUrlString
         
         super.init()
     }
@@ -58,7 +58,16 @@ class RSSFeedModel: NSObject {
     }
     
     fileprivate func requestFeedUpdate() {
-        Alamofire.request(feedUrl, method: .get, parameters: nil, encoding: URLEncoding.default).validate(contentType: ["application/x-www-form-urlencoded"]).response { (response) in
+        guard let feedURL = URL(string: feedUrlString) else {
+            print("""
+                     Feed URL is not correct!
+                     Feed won't be updated!
+                     """)
+            self.feedUpdateFinished(newFeed: nil)
+            return
+        }
+        
+        Alamofire.request(feedURL, method: .get, parameters: nil, encoding: URLEncoding.default).validate(contentType: ["application/x-www-form-urlencoded"]).response { (response) in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 let feedDataArray = self.parseHttpResultString(utf8Text)
                 self.feedUpdateFinished(newFeed: feedDataArray)
@@ -68,21 +77,43 @@ class RSSFeedModel: NSObject {
         }
     }
     
-    fileprivate func parseHttpResultString(_ httpString: String) -> [FeedData] {
+    fileprivate func parseHttpResultString(_ httpString: String) -> [FeedData]? {
         let feedArray = httpString.components(separatedBy: "<item>").dropFirst()
         
         var feedDataArray = [FeedData]()
         
         for feed in feedArray {
-            let title = feed.components(separatedBy: "<title>")[1].components(separatedBy: "</title>")[0]
-            let desc = feed.components(separatedBy: "<description>")[1].components(separatedBy: "&lt")[0]
-            let pubDate = feed.components(separatedBy: "<pubDate>")[1].components(separatedBy: "</pubDate>")[0]
-            let link = feed.components(separatedBy: "<feedburner:origLink>")[1].components(separatedBy: "</feedburner:origLink>")[0]
+            let title = parseHttpComponent(from: feed, openningComponent: "<title>",
+                                           closingComponent: "</title>")
+            let desc = parseHttpComponent(from: feed, openningComponent: "<description>",
+                                         closingComponent: "&lt")
+            let pubDate = parseHttpComponent(from: feed, openningComponent: "<pubDate>",
+                                             closingComponent: "/pubDate")
+            let link = parseHttpComponent(from: feed, openningComponent: "<feedburner:origLink>",
+                                          closingComponent: "</feedburner:origLink>")
             let feedData = FeedData(title: title, description: desc, date: pubDate, link: link)
             feedDataArray.append(feedData)
         }
         
         return feedDataArray
+    }
+    
+    fileprivate func parseHttpComponent(from httpString: String,
+                                        openningComponent: String,
+                                        closingComponent: String) -> String {
+        let firstSeparation = httpString.components(separatedBy: openningComponent)
+        guard firstSeparation.count >= 2 else {
+            return ""
+        }
+        
+        let removedBeginning = firstSeparation[1]
+        let secondSeparation = removedBeginning.components(separatedBy: closingComponent)
+        guard secondSeparation.count >= 2 else {
+            return ""
+        }
+        
+        let internalPart = secondSeparation[0]
+        return internalPart
     }
 }
 

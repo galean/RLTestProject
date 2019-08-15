@@ -16,12 +16,10 @@ class RSSOtherModel: NSObject {
 
     override init() {
         let entUrlStr = "http://feeds.reuters.com/reuters/entertainment"
-        let entUrl = URL(string: entUrlStr)!
-        entertainmentModel = RSSFeedModel(with: entUrl)
+        entertainmentModel = RSSFeedModel(with: entUrlStr)
         
         let envUrlStr = "http://feeds.reuters.com/reuters/environment"
-        let envUrl = URL(string: envUrlStr)!
-        environmentModel = RSSFeedModel(with: envUrl)
+        environmentModel = RSSFeedModel(with: envUrlStr)
         
         super.init()
         

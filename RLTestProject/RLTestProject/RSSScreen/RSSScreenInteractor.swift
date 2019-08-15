@@ -107,7 +107,10 @@ extension RSSScreenInteractor: RSSScreenPresenterToInteractorProtocol {
         let linkURLOpt = URL(string: feed.link)
         
         guard let linkURL = linkURLOpt else {
-            print("Description link is not correct!")
+            print("""
+                     Description link is not correct!
+                     Feed doesn't have description or link is corrupted.
+                     """)
             return
         }
         let feedDescriptionData = RSSFeedDescriptionData(title: title, linkURL: linkURL)
