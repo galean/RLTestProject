@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 protocol RSSFeedDescriptionModalVCProtocol {
     var feedDescriptionData: RSSFeedDescriptionData? {get set}
@@ -19,13 +20,19 @@ class RSSFeedDescriptionModalVC: UIViewController {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var feedDescriptionData: RSSFeedDescriptionData?
+    var currentRequest: DataRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavigationBar()
-        showURLContent()
         sendFeedDescriptionOpenedNotification()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showURLContent()
     }
     
     fileprivate func configureNavigationBar() {
@@ -34,9 +41,25 @@ class RSSFeedDescriptionModalVC: UIViewController {
     
     fileprivate func showURLContent() {
         if let link = feedDescriptionData?.linkURL {
-            webView.load(URLRequest(url: link))
-            webView.navigationDelegate = self
+            DispatchQueue.global().async {
+                self.requestURLData(with: link)
+            }
         }
+    }
+    
+    fileprivate func requestURLData(with link: URL) {
+        currentRequest = Alamofire.request(link, method: .get, parameters: nil, encoding: URLEncoding.default).validate(contentType: ["application/x-www-form-urlencoded"]).response { (response) in
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    self.showHTMLContent(utf8Text, baseLink: link)
+                }
+            }
+        }
+    }
+    
+    fileprivate func showHTMLContent(_ htmlString: String, baseLink link: URL) {
+        self.webView.loadHTMLString(htmlString, baseURL: link)
+        self.webView.navigationDelegate = self
     }
     
     fileprivate func sendFeedDescriptionOpenedNotification() {
@@ -51,6 +74,8 @@ class RSSFeedDescriptionModalVC: UIViewController {
     }
     
     deinit {
+        currentRequest?.cancel()
+        webView.stopLoading()
         sendFeedDescriptionClosedNotification()
     }
 }
