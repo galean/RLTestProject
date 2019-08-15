@@ -28,6 +28,7 @@
 		BBFCAB952304A8CF0045A558 /* RSSFeedDescriptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFCAB942304A8CF0045A558 /* RSSFeedDescriptionData.swift */; };
 		BBFCAB972304AE350045A558 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFCAB962304AE350045A558 /* WebKit.framework */; };
 		BBFCAB9C23053F100045A558 /* SwiftExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFCAB9B23053F100045A558 /* SwiftExtentions.swift */; };
+		BBFCABA023055E1B0045A558 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = BBFCAB9F23055E1B0045A558 /* Readme */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		BBFCAB942304A8CF0045A558 /* RSSFeedDescriptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RSSFeedDescriptionData.swift; path = ../../../../../../../../../System/Volumes/Data/Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/RSSFeedDescriptionModal/RSSFeedDescriptionData.swift; sourceTree = "<group>"; };
 		BBFCAB962304AE350045A558 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BBFCAB9B23053F100045A558 /* SwiftExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtentions.swift; sourceTree = "<group>"; };
+		BBFCAB9F23055E1B0045A558 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
 		D654BC7939018E127290E14D /* Pods-RLTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RLTestProject.debug.xcconfig"; path = "Target Support Files/Pods-RLTestProject/Pods-RLTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		BB380E252304560E0042CB1E = {
 			isa = PBXGroup;
 			children = (
+				BBFCAB9F23055E1B0045A558 /* Readme */,
 				BB380E302304560E0042CB1E /* RLTestProject */,
 				BB380E2F2304560E0042CB1E /* Products */,
 				550F77C105F35F8E6450C165 /* Pods */,
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBFCABA023055E1B0045A558 /* Readme in Resources */,
 				BB380E3C2304560F0042CB1E /* LaunchScreen.storyboard in Resources */,
 				BB380E392304560F0042CB1E /* Assets.xcassets in Resources */,
 				BB380E372304560E0042CB1E /* Main.storyboard in Resources */,
