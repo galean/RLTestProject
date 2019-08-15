@@ -23,8 +23,13 @@ class RSSFeedDescriptionModalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavigationBar()
         showURLContent()
         sendFeedDescriptionOpenedNotification()
+    }
+    
+    fileprivate func configureNavigationBar() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     fileprivate func showURLContent() {

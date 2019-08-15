@@ -27,6 +27,7 @@
 		BBFCAB922304A3820045A558 /* RSSFeedDescriptionModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFCAB902304A3820045A558 /* RSSFeedDescriptionModalVC.swift */; };
 		BBFCAB952304A8CF0045A558 /* RSSFeedDescriptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFCAB942304A8CF0045A558 /* RSSFeedDescriptionData.swift */; };
 		BBFCAB972304AE350045A558 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFCAB962304AE350045A558 /* WebKit.framework */; };
+		BBFCAB9C23053F100045A558 /* SwiftExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFCAB9B23053F100045A558 /* SwiftExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		BBFCAB902304A3820045A558 /* RSSFeedDescriptionModalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedDescriptionModalVC.swift; sourceTree = "<group>"; };
 		BBFCAB942304A8CF0045A558 /* RSSFeedDescriptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RSSFeedDescriptionData.swift; path = ../../../../../../../../../System/Volumes/Data/Users/galpal/Documents/Projects_My/RLTestProject/RLTestProject/RLTestProject/RSSScreen/RSSFeedDescriptionModal/RSSFeedDescriptionData.swift; sourceTree = "<group>"; };
 		BBFCAB962304AE350045A558 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		BBFCAB9B23053F100045A558 /* SwiftExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtentions.swift; sourceTree = "<group>"; };
 		D654BC7939018E127290E14D /* Pods-RLTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RLTestProject.debug.xcconfig"; path = "Target Support Files/Pods-RLTestProject/Pods-RLTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BB380E312304560E0042CB1E /* AppDelegate.swift */,
+				BBFCAB9823053EEE0045A558 /* SwiftExtentions */,
 				BB380E43230457320042CB1E /* InfoScreen */,
 				BB380E44230457540042CB1E /* RSSScreen */,
 				BB380E352304560E0042CB1E /* Main.storyboard */,
@@ -161,6 +164,14 @@
 				BBFCAB902304A3820045A558 /* RSSFeedDescriptionModalVC.swift */,
 			);
 			path = RSSFeedDescriptionModal;
+			sourceTree = "<group>";
+		};
+		BBFCAB9823053EEE0045A558 /* SwiftExtentions */ = {
+			isa = PBXGroup;
+			children = (
+				BBFCAB9B23053F100045A558 /* SwiftExtentions.swift */,
+			);
+			path = SwiftExtentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				BB380E322304560E0042CB1E /* AppDelegate.swift in Sources */,
 				BB380E5A23045BC30042CB1E /* InfoScreenViewModel.swift in Sources */,
 				BBFCAB922304A3820045A558 /* RSSFeedDescriptionModalVC.swift in Sources */,
+				BBFCAB9C23053F100045A558 /* SwiftExtentions.swift in Sources */,
 				BB534446230485C0004C1B71 /* RSSNewsModel.swift in Sources */,
 				BB380E6023045BE40042CB1E /* RSSScreenPresenter.swift in Sources */,
 				BB380E6223045BE40042CB1E /* RSSScreenInteractor.swift in Sources */,

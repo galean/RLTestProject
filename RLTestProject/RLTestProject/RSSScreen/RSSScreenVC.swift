@@ -33,10 +33,15 @@ class RSSScreenVC: UIViewController {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+        configureNavigationBar()
     }
     
-    func configureTable() {
+    fileprivate func configureTable() {
         tableView.register(RSSScreenTableViewCell.self, forCellReuseIdentifier: "RSSScreenTableViewCell")
+    }
+    
+    fileprivate func configureNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     //MARK:- Buttons actions

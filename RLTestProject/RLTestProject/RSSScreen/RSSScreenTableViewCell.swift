@@ -18,7 +18,7 @@ class RSSScreenTableViewCell: UITableViewCell {
                    dateStr: String,
                    descriptionStr: String) {
         titleLabel.text = titleStr
-        dateLabel.text = dateStr
+        dateLabel.text = "Posted: ".localized + dateStr
         descriptionLabel.text = descriptionStr
     }
 }
